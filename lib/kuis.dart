@@ -64,11 +64,15 @@ class MyAppState extends State<MyApp> {
                 });
               },
             ),
-            Text(
-              _nama != "" ? 'selamat $pilihanSalamOut' : "",
-              style: const TextStyle(
-                  fontSize: 30, fontWeight: FontWeight.bold, color: Colors.red),
-            ), //hasil disini
+              ElevatedButton(
+                onPressed:(){
+                setState(() {
+                 _nama = textEditController.text; 
+                 pilihanSalamOut = pilihanSalam;
+                 style: const TextStyle(
+                  fontSize: 30, fontWeight: FontWeight.bold, color: Colors.red) //ambil dari state
+              });//hasil disini
+                })
           ],
         )), //column center
       ), //Scaffold
@@ -127,4 +131,3 @@ class ButtonPerjanjian extends StatelessWidget {
    );
  }
 }
-
